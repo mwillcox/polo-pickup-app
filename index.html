@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pickupApp">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Pickup</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
+		<script src='https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js'></script>
+		<script src="node_modules/angular-route/angular-route.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#home">Pickup Pal</a>
+			    </div>
+			    <div>
+			      <ul class="nav navbar-nav">
+			        <li><a href="#setup">Setup</a></li>
+			        <li><a href="#games">Games</a></li>
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+
+			<div ng-view>
+
+			</div>
+
+			<footer>
+				<p>
+					&copy; Copyright  by Michelle Willcox
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
