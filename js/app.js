@@ -1,27 +1,34 @@
 var pickupApp = angular.module('pickupApp', [
 	'firebase',
-	'ngRoute'
+	'ui.router'
 	]);
 
-pickupApp.config(['$routeProvider',
-	function($routeProvider){
-		$routeProvider.
-			when('/home',
-			{
-				templateUrl: 'home.html'
-			}).
-			when('/setup', {
-				templateUrl: 'setup.html',
-				controller: 'SetupCtrl'
-			}).
-			when('/games', {
-				templateUrl: 'games.html',
-				controller: 'GamesCtrl'
-			}).
-			otherwise({
-				redirectTo: '/home.html'
-			});
-	}]);
+pickupApp.config(function($stateProvider, $urlRouterProvider){
+		
+		$urlRouterProvider.otherwise('/home');
+
+		$stateProvider
+        
+        // HOME STATES AND NESTED VIEWS ========================================
+        .state('home', {
+            url: '/home',
+            templateUrl: 'home.html'
+        })
+        
+        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
+        .state('setup', {
+            url: '/setup',
+            templateUrl: 'setup.html',
+            controller: 'SetupCtrl'    
+        })
+
+        .state('games', {
+            url: '/games',
+            templateUrl: 'games.html',  
+            controller: 'GamesCtrl'    
+        });
+
+	});
 
 pickupApp.controller('SetupCtrl', function($scope, $firebase){
 	var ref = new Firebase('https://popping-inferno-9074.firebaseio.com/');
@@ -37,5 +44,6 @@ pickupApp.controller('GamesCtrl', function($scope, $firebase){
 	var ref = new Firebase('https://popping-inferno-9074.firebaseio.com/');
 	$scope.players = $firebase(ref).$asArray();
 });
+
 
 

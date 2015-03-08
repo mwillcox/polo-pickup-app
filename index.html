@@ -11,31 +11,29 @@
 		<script src="js/app.js"></script>
 		<script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
 		<script src='https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js'></script>
-		<script src="node_modules/angular-route/angular-route.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 
 	<body>
 		<div>
-			<nav class="navbar navbar-inverse">
-			  <div class="container-fluid">
-			    <div class="navbar-header">
-			      <a class="navbar-brand" href="#home">Pickup Pal</a>
-			    </div>
-			    <div>
-			      <ul class="nav navbar-nav">
-			        <li><a href="#setup">Setup</a></li>
-			        <li><a href="#games">Games</a></li>
-			      </ul>
-			    </div>
-			  </div>
+			<nav>
+		      <ul>
+		      	<li><a ui-sref="home">Pickup Pal</a></li>
+		      	<li> | </li>
+		        <li><a ui-sref="setup">Setup</a></li>
+		        <li> | </li>
+		        <li><a ui-sref="games">Games</a></li>
+		      </ul>
 			</nav>
 
-			<div ng-view>
+			<div ui-view class="router-test"></div>
+
 
 			</div>
 
 			<footer>
-				<p>
+				<p class='footer-test'>
 					&copy; Copyright  by Michelle Willcox
 				</p>
 			</footer>
