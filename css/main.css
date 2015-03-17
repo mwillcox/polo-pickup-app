@@ -1,16 +1,20 @@
-nav {width: 100%; margin: 20px; }
-
-nav ul{
-margin: 0;
-padding: 0;
-list-style-type: none;
-text-align: center;
+nav {
+	width: 100%; margin: 20px; 
 }
 
-nav ul li { display: inline; }
+nav ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+nav ul li { 
+	display: inline; 
+}
 
 
-.router-test .home-content{
+.partial-view .home-content{
 	background-image:url("../img/main-home-img.jpg"); 
 	background-repeat: no-repeat;
 	width:900px; 
@@ -21,4 +25,22 @@ nav ul li { display: inline; }
 	margin:0 auto;
 }
 
-.router-test .home-content h3{vertical-align: middle;}
+.partial-view .home-content h3{
+	vertical-align: middle;
+}
+
+.partial-view .setup-content{
+	width: 40%;
+}
+
+.partial-view .games-content{
+	width:70%;
+}
+
+.partial-view .games-content .games-content-queue .panel-success{
+	margin-top: 15px;
+}
+
+.partial-view .games-content .games-content-queue .games-content-finish{
+	text-align: center;
+}

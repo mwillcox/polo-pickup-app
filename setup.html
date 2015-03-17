@@ -1,17 +1,14 @@
-<div class="container-fluid" ng-controller="SetupCtrl">
-  				<div class="row">
-  					<div class="col-md-4">
-  						<h4>Add Player</h4>
-  						<form>
-  							<input ng-model="name" type="text" id="playerName" placeholder="Name"/><br/>
-  							<input type="submit" value="Submit" ng-click="submitPlayer()">
-  						</form>
-  					</div>
-  					<div class="col-md-4">
-  						<h4 class='players'>Players</h4>
-  						<ul class="list-group">
-  							<li ng-repeat="player in players" class="list-group-item">{{player.name}}</li>
-  						</ul>
-  					</div>
-  				</div>	
-			</div>
+<div class="container-fluid setup-content" ng-controller="SetupCtrl">
+	<div class="col-lg-12">
+		<form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label">Add Player</label>
+  			<input ng-model="playerName" type="text" id="playerName"/>
+        <button type="submit" class="btn btn-default" ng-click="addPlayer()">Submit</button>
+      </div>
+		</form>
+    <ul class="list-group">
+      <li ng-repeat="player in players" class="list-group-item">{{player.name}}</li>
+    </ul>
+	</div>
+</div>

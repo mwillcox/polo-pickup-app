@@ -1,13 +1,45 @@
-<div class="container-fluid" ng-controller="GamesCtrl">
-	<div class="row">
-		<div class="col-md-4">
-			<h4>Players</h4>
-			<ul class="list-group">
+<div class="container-fluid games-content" ng-controller="GamesCtrl">
+	<div class="col-md-4">
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Players <span class="badge">14</span></h3>
+		  </div>
+		  <div class="panel-body">
+		    <ul class="list-group">
 				<li ng-repeat="player in players" class="list-group-item">{{player.name}}</li>
 			</ul>
+		  </div>
 		</div>
-		<div class="col-md-4">
-      Games
-    </div>
-	</div>	
+	</div>
+
+	<div class="col-md-4 games-content-queue">
+		<h4>Games</h4>
+		<button type="button" class="btn btn-primary" ng-show="isNewGame" ng-click="startGames()">Get Started</button>
+		<div class="panel panel-success" ng-repeat="game in games">
+			<table class="table table-bordered">
+				<tr>
+					<td>Team Alpha</td>
+					<td>Team Beta</td>
+				</tr>
+				<tr>
+					<td>
+						<ul>
+							<li ng-repeat="member in game.teamA">{{member.name}}</li>
+						</ul>
+					</td>
+					<td>
+						<ul>
+							<li ng-repeat="member in game.teamB">{{member.name}}</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="games-content-finish">
+						<button class="btn btn-primary">Finish</button>	
+					</td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
 </div>
